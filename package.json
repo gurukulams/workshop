@@ -1,35 +1,23 @@
 {
-  "name": "gurukulams-website",
+  "name": "hugo-rollup-project",
   "version": "1.0.0",
-  "description": "Gurukulams Website",
-  "source": "src/index.html",
-  "author": "Sathish Kumar Thiyagarajan",
-  "license": "ISC",
+  "type": "module",
   "scripts": {
-    "watch:sass": "onchange \"src/scss\" -- run-s build:sass",
-    "watch:site": "onchange \"site\" -- run-s build:site",
-    "start": "npm run build && run-p watch:* serve",
-    "serve": "webpack serve",
-    "build:js": "webpack",
-    "build:sass": "sass src/scss:dist/css",
-    "build:site": "hugo --minify -d ../dist -s site",
-    "build": "run-s build:*"
+    "build:js": "rollup -c",
+    "build:site": "hugo -s site",
+    "build": "npm-run-all build:js build:site",
+    "dev": "npm-run-all --parallel watch:js serve:hugo",
+    "watch:js": "rollup -c -w",
+    "serve:hugo": "hugo server -s site --themesDir ../.. --bind 0.0.0.0"
   },
   "devDependencies": {
-    "webpack": "5.99.9",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "5.2.2",
-    "clean-webpack-plugin": "^4.0.0",
-    "sass": "1.89.1",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3",
-    "hugo-bin": "0.144.8",
-    "npm-run-all": "4.1.5",
-    "onchange": "^7.1.0",
-    "qrious": "^4.0.2",
-    "@recogito/recogito-js": "1.8.4"
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "glob": "^10.3.10",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^4.0.0"
   },
-  "browserslist": [
-    "defaults"
-  ]
+  "dependencies": {
+    "practice-js": "github:gurukulams/practice-js"
+  }
 }

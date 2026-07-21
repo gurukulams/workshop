@@ -1,0 +1,14 @@
+theme = 'design-system'
+
+[languages]
+[languages.en]
+title = 'Workspace'
+languageName = 'English'
+contentDir = 'content.en'
+weight = 1
+
+[languages.ta]
+title = 'மன்றம்'
+languageName = 'தமிழ்'
+contentDir = 'content.ta'
+weight = 2
