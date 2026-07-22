@@ -105,3 +105,6 @@ package-lock.json
 
 site/content.*/books
 site/content.*/courses/books
+
+site/public
+site/themes
