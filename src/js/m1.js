@@ -1,6 +1,6 @@
-import PracticeMaker from 'practice-js'
+import QuestionLoader from '../../site/themes/design-system/src/js/components/QuestionLoader'
 
-new PracticeMaker();
+new QuestionLoader();
 
 const message = "Hello from Module 1";
 console.log(message);
