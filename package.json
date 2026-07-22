@@ -5,9 +5,11 @@
   "scripts": {
     "build:js": "rollup -c",
     "build:site": "hugo -s site",
-    "build": "npm-run-all build:js build:site",
-    "dev": "npm-run-all --parallel watch:js serve:hugo",
+    "build:questions": "node site/themes/design-system/scripts/build-questions.js --auto-fix",
+    "build": "npm-run-all build:js build:questions build:site",
+    "dev": "npm-run-all --parallel watch:js watch:questions serve:hugo",
     "watch:js": "rollup -c -w",
+    "watch:questions": "node site/themes/design-system/scripts/build-questions.js --watch --auto-fix",
     "serve:hugo": "hugo server -s site --themesDir ../.. --bind 0.0.0.0"
   },
   "devDependencies": {
@@ -18,6 +20,9 @@
     "rollup": "^4.0.0"
   },
   "dependencies": {
-    "practice-js": "github:gurukulams/practice-js"
+    "practice-js": "github:gurukulams/practice-js",
+    "gray-matter": "^4.0.3",
+    "jsonschema": "^1.5.0",
+    "chokidar": "^5.0.0"
   }
 }

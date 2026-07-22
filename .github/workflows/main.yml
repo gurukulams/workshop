@@ -37,6 +37,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         export BUILD_PRODUCTION=Y
+        export PUBLIC_FOLDER="$PWD/site/public"
         git submodule add -f https://github.com/gurukulams/design-system site/themes/design-system
         rm site/themes/design-system/package-lock.json
         npm i --prefix site/themes/design-system/
