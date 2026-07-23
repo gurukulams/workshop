@@ -103,6 +103,9 @@ dist/
 # End of https://www.gitignore.io/api/node,sass
 package-lock.json
 
+site/static/js
+site/static/data
+
 site/content.*/books
 site/content.*/courses/books
 
