@@ -1,5 +1,7 @@
 {{ define "main" }}
-    <div id="practice-container" data-practice-category="eduction/fundamentals/material" >
+    <div id="practice-container" 
+    data-practice-category="eduction/fundamentals/material"
+    {{ if ne .Language.Lang "en" }}data-practice-lang="{{ .Language.Lang }}"{{ end }} >
         {{ .Content }}
     </div>
     <script type="module" src="/js/m1-bundle.js"></script>        
