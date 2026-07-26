@@ -41,14 +41,5 @@ jobs:
         npm i
         npm run build:questions
 
-  # Deployment job
-    - name: Deploy
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.QUESTION_REPO_HOST }}
-        username: ${{ secrets.QUESTION_REPO_USER }}
-        key: ${{ secrets.QUESTION_REPO_KEY }}
-        target: ${{ secrets.QUESTION_REPO_WORKSHOP_ROOT }}
-        source: "design-system/dist"
-        strip_components: 2
+
 
