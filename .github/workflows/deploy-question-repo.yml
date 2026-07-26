@@ -1,9 +1,10 @@
 name: Deploy Quesions
 
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+  workflow_call:  # <--- THIS IS THE MISSING PART
+  # You can still keep your other triggers too
+  # push:
+  #   branches: ["main"]
 
 env:
   NODE_VERSION: '20.x'                # set this to the node version to use
