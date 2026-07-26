@@ -41,5 +41,7 @@ jobs:
         npm i
         npm run build:questions
 
-
-
+    - uses: actions/upload-artifact@v4
+      with:
+        name: site
+        path: design-system/dist
